@@ -21,6 +21,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: var(--globalFont);
+  color: var(--VeryDarkBlue);
 }
 
 body,  * {
@@ -45,7 +46,9 @@ button {
     outline: var(--debug);
     margin: auto;
     width: 90vw;
-    padding-top: 10px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    
 }
 .logo-container{
     flex: 1;
@@ -97,10 +100,73 @@ nav .nav-item{
  color: #fff;
 }
 
+/*main */
+main {
+    
+}
+
+/*intro section */
+main .intro {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 4.5%;
+   
+    outline: var(--debug);
+}
+.intro .intro-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    margin-right: 40px;
+    
+    font-family: var(--globalFont);
+}
+.intro-content h1 {
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.intro-content  p {
+    color: var(--GrayishViolet);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.intro-content button {
+    width: 30%;
+    background-color: var(--Cyan);
+    padding: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 15px;
+}
+.intro-image img{
+    object-fit: unset;
+ 
+}
+
+/* shorten */
+.shorten{
+    width: 90vw;
+    margin: auto;
+}
+
+/* stat */
+.stat {
+    width: 90vw;
+    margin: auto;
+}
+
+/* .attribution */
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
 
 /* Mobile view */
 @media only screen and (max-width: 750px){
-.header-container{
+.header-container,
+main .intro{
 flex-direction: column;
 }
 }
