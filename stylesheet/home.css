@@ -1,0 +1,106 @@
+:root {
+  --debug: 1px solid red;
+  /* primary colors */
+  --Cyan: hsl(180, 66%, 49%);
+  --DarkViolet: hsl(257, 27%, 26%);
+  /* secondary colors */
+  --Red: hsl(0, 87%, 67%);
+  /* neutral colors */
+  --Gray: hsl(0, 0%, 75%);
+  --GrayishViolet: hsl(257, 7%, 63%);
+  --VeryDarkBlue: hsl(255, 11%, 22%);
+  --VeryDarkViolet: hsl(260, 8%, 14%);
+
+  /* font families  */
+  --globalFont: font-family: 'Poppins', sans-serif;
+  ;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--globalFont);
+}
+
+body,  * {
+  transition: 0.3s;
+}
+a {
+  text-decoration: none;
+}
+button {
+  border-style: none;
+  border: none;
+}
+
+/* Desktop View */
+.page-wrap {
+ color: ;
+}
+/* header */
+.header-container {
+    display: flex;
+    justify-content: center;
+    outline: var(--debug);
+    margin: auto;
+    width: 90vw;
+    padding-top: 10px;
+}
+.logo-container{
+    flex: 1;
+
+}
+nav {
+    flex: 2;
+    display: flex;
+}
+nav a {
+    color: var(--GrayishViolet);
+    font-weight: 700;
+    display: block;
+}
+nav a:hover{
+    color: var(--VeryDarkBlue);
+}
+nav .nav-item{
+    margin-right: 10px;
+}
+
+.user-auth{
+    flex: 1;
+    display: flex;
+    text-align: center;
+    color: var(--GrayishViolet);
+}
+.user-auth .login {
+    margin-right: 10px;
+}
+.user-auth .sign-up {
+
+}
+.user-auth .sign-up,
+.user-auth .login {
+    margin-right: 10px;
+    width: 70px;
+    height: 20px;
+    font-weight: 700;
+    padding: 5px 3px 5px 3px;
+
+}
+
+.user-auth .login:hover,
+.user-auth .sign-up:hover{
+ background-color: var(--Cyan);
+
+ border-radius: 15px;
+ color: #fff;
+}
+
+
+/* Mobile view */
+@media only screen and (max-width: 750px){
+.header-container{
+flex-direction: column;
+}
+}
