@@ -331,14 +331,77 @@ main .intro {
   background-color: var(--CyanLight);
 }
 
+/* footer */
+
+footer {
+  background-color: var(--VeryDarkViolet);
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+}
+footer .logo {
+  display: flex;
+  margin-top: 30px;
+  font-size: 30px;
+  font-weight: 700;
+}
+footer .logo a {
+  display: block;
+  color: #fff;
+}
+footer .features {
+  flex-wrap: 1;
+  display: flex;
+  flex-direction: column;
+}
+footer .features nav {
+  display: flex;
+  flex-direction: column;
+}
+footer .features nav a {
+  display: block;
+  color: var(--Gray);
+}
+footer .features nav a:hover,
+footer .social-media a:hover {
+  color: var(--Cyan);
+}
+footer .features h5 {
+  font-size: 20px;
+
+  font-weight: 500;
+}
+footer .social-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+footer .social-media a {
+  display: block;
+}
+footer .social-media .item {
+  margin-right: 15px;
+  margin-top: 41px;
+}
+
 /* .attribution */
 
 .attribution {
   font-size: 11px;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  color: var(--GrayishViolet);
+  font-weight: 500;
+  padding-top: 30px;
+  background-color: var(--VeryDarkViolet);
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--GrayishViolet);
+  cursor: pointer;
+}
+.attribution a:hover {
+  color: var(--Cyan);
 }
 
 /* Mobile view */
