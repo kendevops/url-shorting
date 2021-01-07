@@ -534,9 +534,13 @@ footer .social-media .item {
   }
   .stat .stat-desc {
     margin-bottom: 40px;
+    text-align: center;
   }
   .stat .cards-wrap .card .icon {
     margin: auto;
+  }
+  .stat .cards-wrap .card {
+    text-align: center;
   }
   .stat .cards-wrap .card2,
   .stat .cards-wrap .card3 {
