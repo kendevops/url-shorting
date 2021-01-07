@@ -34,14 +34,14 @@
         <div class="sign-up">Sign Up</div>
       </div>
 
-      <div class="toggle-icon">
+      <div class="toggle-icon" onclick="toggle()">
         <i class="fa fa-bars"></i>
       </div>
     </header>
 
     <!--Main content-->
     <main>
-      <div class="nav-mobile">
+      <div class="nav-mobile" id="navMobile">
         <nav>
           <a href="#" class="nav-item">Features</a>
           <a href="#" class="nav-item">Pricing</a>
@@ -73,7 +73,7 @@
           <div class="shorten-input-wrap">
             <div class="wrap">
               <div class="input-field">
-                <input type="text" name="link" placeholder="Shorten a link here">
+                <input type="text" name="link" placeholder="Shorten a link here...">
               </div>
               <button type="submit">
                 Shorten it!
@@ -212,5 +212,6 @@
   </div>
 </div>
 <script src="https://kit.fontawesome.com/568c011d87.js" crossorigin="anonymous"></script>
+<script src="../scripts/index.js"></script>
 </body>
 </html>
