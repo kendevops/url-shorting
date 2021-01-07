@@ -35,6 +35,7 @@ a {
 input {
   border: none;
 }
+
 button {
   border-style: none;
   border: none;
@@ -185,7 +186,7 @@ main .intro {
   padding: 8px;
   font-size: 18px;
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 .shorten .shorten-input-wrap .wrap button {
   width: 15%;
@@ -201,6 +202,7 @@ main .intro {
 .shorten .shorten-input-wrap .text {
   color: var(--Red);
   font-size: 16px;
+  display: none;
 }
 
 .shorten .output {
@@ -411,7 +413,6 @@ footer .social-media .item {
 
 /* Mobile view */
 @media only screen and (max-width: 750px) {
-  main .intro,
   .shorten .shorten-input-wrap .wrap,
   .stat .cards-wrap {
     flex-direction: column;
@@ -427,7 +428,9 @@ footer .social-media .item {
     display: none;
   }
   main .nav-mobile {
-    display: flex;
+    position: absolute;
+    z-index: 1;
+    display: none;
     flex-direction: column;
     padding: 0 20px 0 20px;
     background-color: var(--DarkViolet);
@@ -435,11 +438,12 @@ footer .social-media .item {
     font-size: 18px;
     font-weight: 500;
     width: 80vw;
-
-    margin: auto;
+    height: 60vh;
+    margin: 0 30px 0 30px;
     border-radius: 20px;
   }
   main .nav-mobile nav {
+    flex: 1;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -451,26 +455,56 @@ footer .social-media .item {
     margin-top: 30px;
   }
   main .nav-mobile .user-auth {
+    flex: 1;
     border-top: 1px solid var(--GrayishViolet);
     display: flex;
     flex-direction: column;
-    width: 90%;
-    margin: auto;
+    justify-content: center;
+
     text-align: center;
-    padding-top: 10px;
   }
 
   main .nav-mobile .user-auth .login,
   main .nav-mobile .user-auth .sign-up {
     width: 100%;
-    margin-bottom: 30px;
+    align-self: center;
     padding-top: 10px;
     padding-bottom: 15px;
     border-radius: 20px;
     color: #fff;
   }
+  main .intro {
+    flex-direction: column-reverse;
+    margin-bottom: 30px;
+  }
   main .intro .intro-content {
     margin-top: 0;
+    padding-top: 0;
+    flex: 2;
+    text-align: center;
+  }
+  main .intro .intro-content button {
+    width: 40%;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  main .intro-content h1 {
+    font-size: 50px;
+    margin-top: 0;
+  }
+  main .intro-image {
+    flex: 1;
+  }
+
+  .shorten .contain {
+    background: url("../images/bg-shorten-mobile.svg") var(--VeryDarkViolet)
+      no-repeat;
+
+    top: -70px;
   }
   .shorten .shorten-input-wrap .wrap {
     justify-content: center;
@@ -479,5 +513,45 @@ footer .social-media .item {
   .shorten .shorten-input-wrap .wrap button {
     width: 35%;
     margin-top: 10px;
+  }
+
+  .shorten .shorten-input-wrap {
+    padding-bottom: 20px;
+  }
+  .shorten .shorten-input-wrap .input-field {
+    width: 95%;
+  }
+  .shorten .shorten-input-wrap .wrap button {
+    width: 100%;
+  }
+  .stat {
+    padding-bottom: 35px;
+  }
+
+  .stat .space {
+    height: 12vh;
+    width: 4px;
+  }
+  .stat .stat-desc {
+    margin-bottom: 40px;
+  }
+  .stat .cards-wrap .card .icon {
+    margin: auto;
+  }
+  .stat .cards-wrap .card2,
+  .stat .cards-wrap .card3 {
+    bottom: 0;
+  }
+  .action-button {
+    background: url("../images/bg-boost-mobile.svg") var(--DarkViolet);
+  }
+  .action-button button {
+    width: 40%;
+  }
+  footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
 }
