@@ -67,6 +67,9 @@ nav a {
   font-weight: 700;
   display: block;
 }
+.header-container .toggle-icon {
+  display: none;
+}
 nav a:hover {
   color: var(--VeryDarkBlue);
 }
@@ -91,7 +94,8 @@ nav .nav-item {
   width: 70px;
   height: 20px;
   font-weight: 700;
-  padding: 5px 3px 5px 3px;
+
+  padding: 2px 5px 5px 5px;
   cursor: pointer;
 }
 
@@ -104,7 +108,8 @@ nav .nav-item {
 }
 
 /*main */
-main {
+main .nav-mobile {
+  display: none;
 }
 
 /*intro section */
@@ -406,11 +411,66 @@ footer .social-media .item {
 
 /* Mobile view */
 @media only screen and (max-width: 750px) {
-  .header-container,
   main .intro,
   .shorten .shorten-input-wrap .wrap,
   .stat .cards-wrap {
     flex-direction: column;
+  }
+  .header-container .toggle-icon {
+    display: block;
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--Gray);
+  }
+  .header-container nav,
+  .header-container .user-auth {
+    display: none;
+  }
+  main .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0 20px;
+    background-color: var(--DarkViolet);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    width: 80vw;
+
+    margin: auto;
+    border-radius: 20px;
+  }
+  main .nav-mobile nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  main .nav-mobile nav a {
+    display: block;
+    color: #fff;
+    margin-top: 30px;
+  }
+  main .nav-mobile .user-auth {
+    border-top: 1px solid var(--GrayishViolet);
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  main .nav-mobile .user-auth .login,
+  main .nav-mobile .user-auth .sign-up {
+    width: 100%;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-radius: 20px;
+    color: #fff;
+  }
+  main .intro .intro-content {
+    margin-top: 0;
   }
   .shorten .shorten-input-wrap .wrap {
     justify-content: center;
