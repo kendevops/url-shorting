@@ -9,17 +9,7 @@ function toggle() {
     }
   }
 
-  const  testApi = async ()=> {
-    try{
-  let response = await fetch("https://api.shrtco.de/v2/" );
-  console.log(response)
-  let data = await response.json()
-  return data;
-   }catch (error){
-        console.log(error)
-    }
-  
-}
+
 
 // testApi()
   // .then(data => console.log(data),{ METHOd  :  "POST"}); 
@@ -36,18 +26,37 @@ function toggle() {
     
    finalURL = validUrl(url);
 
-   console.log(finalURL);
+   //console.log(finalURL);
 
    if(finalURL != ""){
 
     const userAction = async () => {
       const response = await fetch('https://api.shrtco.de/v2/shorten?url='.concat(finalURL));
+
       const myJson = await response.json(); //extract JSON from the http response
       
+      const outputOne = document.getElementById("outputOne");
+      const oldUrlOne = document.getElementById("oldUrl");
+      const shortLinkOne = document.getElementById("shortLink");
+
+     
+
+      const originalLink  = myJson.result.original_link;
+      const shortLink =  myJson.result.short_link3;
+
       
-      console.log(myJson);
+
+      outputOne.style.display = "flex";
+      oldUrlOne.innerHTML= originalLink;
+      shortLinkOne.innerHTML = shortLink;
+
+      url = " ";
+
       
       
+      //console.log(myJson);
+      
+
     }
 
     userAction();
