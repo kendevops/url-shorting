@@ -170,7 +170,7 @@ main .intro {
   border-radius: 10px;
   position: relative;
   top: -50px;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .shorten .shorten-input-wrap .wrap {
@@ -203,7 +203,6 @@ main .intro {
 .shorten .shorten-input-wrap .text {
   color: var(--Red);
   font-size: 16px;
-  display: none;
 }
 
 .shorten .output {

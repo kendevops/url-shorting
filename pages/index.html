@@ -73,20 +73,19 @@
           <div class="shorten-input-wrap">
             <div class="wrap">
               <div class="input-field">
-                <input type="text" name="link" placeholder="Shorten a link here...">
+                <input id="urlInput" type="text" value="" name="link" placeholder="Shorten a link here...">
               </div>
-              <button type="submit">
+              <button id="link" type="submit" onclick="linkFunction()">
                 Shorten it!
               </button>
             </div>
 
-            <div class="text">
-              Please add a link
+            <div class="text" id="errMsg">
             </div>
           </div>
        </div>
         
-        <div class="output ">
+        <div class="output " id="outputOne">
           <div class="text">some dummy dtest</div>
           <div class="link">akndkjd abjdb</div>
           <button class="copy">
