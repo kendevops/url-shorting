@@ -21,8 +21,8 @@ function toggle() {
   
 }
 
-testApi()
-  .then(data => console.log(data),{ METHOd  :  "POST"}); 
+// testApi()
+  // .then(data => console.log(data),{ METHOd  :  "POST"}); 
 
 
   // get and store the url entered by user
@@ -34,18 +34,39 @@ testApi()
 
    //let isValid = validUrl(url);
     
-   console.log(validUrl(url));
+   finalURL = validUrl(url);
+
+   console.log(finalURL);
+
+   if(finalURL != ""){
+
+    const userAction = async () => {
+      const response = await fetch('https://api.shrtco.de/v2/shorten?url='.concat(finalURL));
+      const myJson = await response.json(); //extract JSON from the http response
+      
+      
+      console.log(myJson);
+      
+      
+    }
+
+    userAction();
+
+   }
     
     }
     let validUrl = (url)=> {
         let check = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
         if(!check.test(url)){
-            document.getElementById("errMsg").innerHTML = "Please add a link"
+            document.getElementById("errMsg").innerHTML = "Please add a link";
+            document.getElementById("urlInput").value = "";
+            url = "";
+
         }else{
             document.getElementById("errMsg").innerHTML = ""
         }
-        
-        return console.log(url);
+
+        return url;
         }
     
 
