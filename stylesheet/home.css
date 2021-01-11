@@ -228,6 +228,7 @@ main .intro {
   padding: 7px;
   border-radius: 3px;
   margin-bottom: 15px;
+  display: none;
 }
 
 .shorten .output .text {
