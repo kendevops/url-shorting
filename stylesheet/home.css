@@ -221,6 +221,7 @@ main .intro {
 }
 .shorten .alert .closebtn {
   float: right;
+  cursor: pointer;
 }
 .shorten .output {
   background-color: #fff;
@@ -552,6 +553,7 @@ footer .social-media .item {
     justify-content: center;
     text-align: center;
     margin-bottom: 20px;
+    display: none;
   }
   .shorten .output .text {
     margin-bottom: 10px;
