@@ -59,9 +59,9 @@ function toggle() {
         oldUrlOne.innerHTML= originalLink;
         shortLinkOne.value = shortLink;
     
-        sessionStorage.setItem('shortLinkOne', shortLinkOne.value);
-        let storedValue= sessionStorage.getItem('shortLinkOne');
-        console.log(storedValue);
+        //sessionStorage.setItem('shortLinkOne', shortLinkOne.value);
+        //let storedValue= sessionStorage.getItem('shortLinkOne');
+        //console.log(storedValue);
         
       } else if(oldUrlTwo.innerHTML  ===  "" && oldUrlOne.innerHTML !== ""  ){
         outputTwo.style.display = "flex";
