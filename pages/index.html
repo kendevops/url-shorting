@@ -85,26 +85,30 @@
           </div>
        </div>
         
+       <!--alert-->
+        <div class="alert" id="alertBox">Copied to clipBoard!
+          <span class="closebtn">&times;</span>
+        </div>
         <div class="output " id="outputOne">
           <div class="text" id="oldUrl"></div>
-          <div class="link" id="shortLink"></div>
-          <button class="copy">
+          <input type="text" class="link" id="shortLink" value="example">
+          <button class="copy" id="copy" onclick="copyLink()">
             Copy
           </button>
         </div>
 
         <div class="output " id="outputTwo">
-          <div class="text" id="oldUrl2">some dummy dtest</div>
-          <div class="link" id="shortLink2">akndkjd abjdb</div>
-          <button class="copy">
+          <div class="text" id="oldUrlTwo">some dummy dtest</div>
+          <input type="text" class="link" id="shortLinkTwo" value="example" />
+          <button class="copy" id="copy" onclick="copyLink()">
             Copy
           </button>
         </div>
 
         <div class="output " id="outputThree">
-          <div class="text" id="oldUrl3">some dummy dtest</div>
-          <div class="link" id="shortLink3">akndkjd abjdb</div>
-          <button class="copy">
+          <div class="text" id="oldUrlThree">some dummy dtest</div>
+          <input type="text" class="link" id="shortLinkThree" value="example" />
+          <button class="copy" id="copy" onclick="copyLink()">
             Copy
           </button>
         </div>

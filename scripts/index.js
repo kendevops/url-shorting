@@ -39,19 +39,45 @@ function toggle() {
       const oldUrlOne = document.getElementById("oldUrl");
       const shortLinkOne = document.getElementById("shortLink");
 
+      const outputTwo = document.getElementById("outputTwo");
+      const oldUrlTwo = document.getElementById("oldUrlTwo");
+      const shortLinkTwo = document.getElementById("shortLinkTwo");
+      
+      const outputThree = document.getElementById("outputThree");
+      const oldUrlThree = document.getElementById("oldUrlThree");
+      const shortLinkThree = document.getElementById("shortLinkThree");
+
      
 
       const originalLink  = myJson.result.original_link;
       const shortLink =  myJson.result.short_link3;
 
       
-
-      outputOne.style.display = "flex";
-      oldUrlOne.innerHTML= originalLink;
-      shortLinkOne.innerHTML = shortLink;
-
-      url = " ";
-
+      if(oldUrlOne.innerHTML === ""){
+        outputOne.style.display = "flex";
+        
+        oldUrlOne.innerHTML= originalLink;
+        shortLinkOne.value = shortLink;
+    
+        sessionStorage.setItem('shortLinkOne', shortLinkOne.value);
+        let storedValue= sessionStorage.getItem('shortLinkOne');
+        console.log(storedValue);
+        
+      } else if(oldUrlTwo.innerHTML  ===  "" && oldUrlOne.innerHTML !== ""  ){
+        outputTwo.style.display = "flex";
+        oldUrlTwo.innerHTML= originalLink;
+        shortLinkTwo.value = shortLink;
+        //sessionStorage.setItem('shortLinkTwo', shortLinkTwo.value);
+        
+      } else {
+        outputThree.style.display = "flex";
+        oldUrlThree.innerHTML= originalLink;
+        shortLinkThree.value = shortLink;
+        //sessionStorage.setItem('shortLinkThree', short_link3.value);
+        
+      }
+      
+      
       
       
       //console.log(myJson);
@@ -87,4 +113,23 @@ function toggle() {
   // render the link in an a tag
   // store the link in local storage
   // copy the link onclick
+  const  copyLink = ()=> {
+    
+    let copyItem = document.getElementsByClassName("link");
+    let alertBox = document.getElementById("alertBox");
+    copyItem[0].select();
+    copyItem[0].setSelectionRange(0, 99999); /* For mobile devices */
+    document.execCommand("copy");
+  
+    /* Alert the copied text */
+    alertBox.style.display="block";
+    let closeBtn = document.getElementsByClassName("closebtn");
+      closeBtn[0].onclick = function(){
+        let alertBox = document.getElementById("alertBox");
+        alertBox.style.opacity ="0";
+        setTimeout(function(){ alertBox.style.display = "none"; }, 600);
+      };
+  }
+  
+  
   

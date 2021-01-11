@@ -204,7 +204,24 @@ main .intro {
   color: var(--Red);
   font-size: 16px;
 }
-
+.shorten .alert {
+  position: absolute;
+  width: 80vw;
+  margin: auto;
+  background-color: var(--Cyan);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.6s;
+  display: none;
+}
+.shorten .alert .closebtn {
+  float: right;
+}
 .shorten .output {
   background-color: #fff;
   display: flex;
@@ -225,6 +242,10 @@ main .intro {
 
   color: var(--Cyan);
   font-weight: 500;
+  cursor: pointer;
+}
+.shorten .output .link input[value] {
+  color: var(--Cyan);
 }
 .shorten .output button {
   padding: 4px;
