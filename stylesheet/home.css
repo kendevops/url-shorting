@@ -228,7 +228,6 @@ main .intro {
   padding: 7px;
   border-radius: 3px;
   margin-bottom: 15px;
-  display: none;
 }
 
 .shorten .output .text {
@@ -435,7 +434,8 @@ footer .social-media .item {
 /* Mobile view */
 @media only screen and (max-width: 750px) {
   .shorten .shorten-input-wrap .wrap,
-  .stat .cards-wrap {
+  .stat .cards-wrap,
+  .shorten .output {
     flex-direction: column;
   }
   .header-container .toggle-icon {
@@ -544,6 +544,32 @@ footer .social-media .item {
   }
   .shorten .shorten-input-wrap .wrap button {
     width: 100%;
+  }
+  .shorten .output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .shorten .output .text {
+    margin-bottom: 10px;
+  }
+  .shorten .output input {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .shorten .output .link {
+    text-align: center;
+    font-size: 20px;
+  }
+  .shorten .output .copy {
+    width: 70%;
+    align-self: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+    border-radius: 20px;
   }
   .stat {
     padding-bottom: 35px;
