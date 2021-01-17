@@ -84,10 +84,14 @@
             </div>
           </div>
        </div>
-        
+       
        <!--alert-->
+        <!--Loader-->
+        <div id="loader"></div>
+         
+
         <div class="alert" id="alertBox">Copied to clipBoard!
-          <span class="closebtn">&times;</span>
+          <span class="closebtn" id="closebtn">&times;</span>
         </div>
         <div class="output " id="outputOne">
           <div class="text" id="oldUrl"></div>
@@ -98,7 +102,7 @@
         </div>
 
         <div class="output " id="outputTwo">
-          <div class="text" id="oldUrlTwo">some dummy dtest</div>
+          <div class="text" id="oldUrlTwo"></div>
           <input type="text" class="link" id="shortLinkTwo" value="example" />
           <button class="copy" id="copy" onclick="copyLink()">
             Copy
@@ -106,7 +110,7 @@
         </div>
 
         <div class="output " id="outputThree">
-          <div class="text" id="oldUrlThree">some dummy dtest</div>
+          <div class="text" id="oldUrlThree"></div>
           <input type="text" class="link" id="shortLinkThree" value="example" />
           <button class="copy" id="copy" onclick="copyLink()">
             Copy

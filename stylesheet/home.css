@@ -41,6 +41,10 @@ button {
   border: none;
   cursor: pointer;
 }
+input:focus,
+button:focus {
+  outline: none;
+}
 
 /* Desktop View */
 .page-wrap {
@@ -203,6 +207,38 @@ main .intro {
 .shorten .shorten-input-wrap .text {
   color: var(--Red);
   font-size: 16px;
+}
+.shorten #loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid var(--Cyan);
+  border-right: 16px solid var(--DarkViolet);
+  border-bottom: 16px solid var(--VeryDarkBlue);
+  border-left: 16px solid var(--GrayishViolet);
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .shorten .alert {
   position: absolute;

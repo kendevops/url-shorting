@@ -1,7 +1,7 @@
 //navigation
 
 function toggle() {
-    var navbar = document.getElementById("navMobile");
+    let navbar = document.getElementById("navMobile");
     if (navbar.style.display === "flex") {
       navbar.style.display = "none";
     } else {
@@ -31,9 +31,14 @@ function toggle() {
    if(finalURL != ""){
 
     const userAction = async () => {
+      let loader = document.getElementById("loader");
+      loader.style.display ="block";
       const response = await fetch('https://api.shrtco.de/v2/shorten?url='.concat(finalURL));
-
-      const myJson = await response.json(); //extract JSON from the http response
+      const myJson = await response.json(); //extract JSON from the http 
+      if(myJson !== undefined){
+        
+        loader.style.display ="none";
+      }
       
       const outputOne = document.getElementById("outputOne");
       const oldUrlOne = document.getElementById("oldUrl");
@@ -59,9 +64,10 @@ function toggle() {
         oldUrlOne.innerHTML= originalLink;
         shortLinkOne.value = shortLink;
     
-        //sessionStorage.setItem('shortLinkOne', shortLinkOne.value);
-        //let storedValue= sessionStorage.getItem('shortLinkOne');
-        //console.log(storedValue);
+        sessionStorage.setItem('outputOne', outputOne.nextElementSibling);
+        let storedValue= sessionStorage.getItem('outputOne');
+        //storedValue.nextSibling.style.display = "flex";
+        console.log(storedValue);
         
       } else if(oldUrlTwo.innerHTML  ===  "" && oldUrlOne.innerHTML !== ""  ){
         outputTwo.style.display = "flex";
@@ -69,7 +75,7 @@ function toggle() {
         shortLinkTwo.value = shortLink;
         //sessionStorage.setItem('shortLinkTwo', shortLinkTwo.value);
         
-      } else {
+      } else if( oldUrlThree.innerHTML === "" &&   oldUrlTwo.innerHTML !== "") {
         outputThree.style.display = "flex";
         oldUrlThree.innerHTML= originalLink;
         shortLinkThree.value = shortLink;
@@ -115,19 +121,24 @@ function toggle() {
   // copy the link onclick
   const  copyLink = ()=> {
     
-    let copyItem = document.getElementsByClassName("link");
+    let copyItems = document.querySelectorAll(".link");
     let alertBox = document.getElementById("alertBox");
-    copyItem[0].select();
-    copyItem[0].setSelectionRange(0, 99999); /* For mobile devices */
-    document.execCommand("copy");
-  
-    /* Alert the copied text */
+     
+    copyItems.forEach(function (copyItem) {
+    copyItem.select(); 
+    copyItem.setSelectionRange(0, 99999); /* For mobile devices */
+     /* Alert the copied text */
     alertBox.style.display="block";
-    let closeBtn = document.getElementsByClassName("closebtn");
-      closeBtn[0].onclick = function(){
+    document.execCommand("copy");
+
+  });
+  
+    /*close the alert */
+    let closeBtn = document.getElementById("closebtn");
+      closeBtn.onclick = function(){
         let alertBox = document.getElementById("alertBox");
-        alertBox.style.opacity ="0";
-        setTimeout(function(){ alertBox.style.display = "none"; }, 600);
+        alertBox.style.display ="none";
+        //setTimeout(function(){ alertBox.style.display = "none"; }, 600);
       };
   }
   
