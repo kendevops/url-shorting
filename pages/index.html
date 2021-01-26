@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
+
+  <link rel="stylesheet" href="../stylesheet/home.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+<body>
+  <div class="page-wrap">
+    <!--Header-->
+
+    <header class="header-container">
+      <div class="logo-container">
+        <img src="../images/logo.svg" alt="logo" class="logo">
+      </div>
+      <nav>
+        <a href="#" class="nav-item">Features</a>
+        <a href="#" class="nav-item">Pricing</a>
+        <a href="#" class="nav-item">Resources</a>
+      </nav>
+      <div class="user-auth">
+        <div class="login">Login</div>
+        <div class="sign-up">Sign Up</div>
+      </div>
+
+      <div class="toggle-icon" onclick="toggle()">
+        <i class="fa fa-bars"></i>
+      </div>
+    </header>
+
+    <!--Main content-->
+    <main>
+      <div class="nav-mobile" id="navMobile">
+        <nav>
+          <a href="#" class="nav-item">Features</a>
+          <a href="#" class="nav-item">Pricing</a>
+          <a href="#" class="nav-item">Resources</a>
+        </nav>
+        <div class="user-auth">
+          <div class="login">Login</div>
+          <div class="sign-up">Sign Up</div>
+        </div>
+      </div>
+      <section class="intro">
+        <div class="intro-content">
+          <h1>More than just<br> shorter links</h1>
+          <p>Build your brand’s recognition and get detailed insights 
+            on how your links are performing.
+          </p>
+          <button>
+            Get Started
+          </button>
+        </div>
+        <div class="intro-image">
+          <img src="../images//illustration-working.svg" alt="illustration-working-svg">
+        </div>
+      </section>
+
+      <div class="grey-bg">
+      <section class="shorten">
+        <div class="contain">
+          <div class="shorten-input-wrap">
+            <div class="wrap">
+              <div class="input-field">
+                <input id="urlInput" type="text" value="" name="link" placeholder="Shorten a link here...">
+              </div>
+              <button id="link" type="submit" onclick="linkFunction()">
+                Shorten it!
+              </button>
+            </div>
+
+            <div class="text" id="errMsg">
+            </div>
+          </div>
+       </div>
+       
+       <!--alert-->
+        <!--Loader-->
+        <div id="loader"></div>
+         
+
+        <div class="alert" id="alertBox">Copied to clipBoard!
+          <span class="closebtn" id="closebtn">&times;</span>
+        </div>
+        <div class="output " id="outputOne">
+          <div class="text" id="oldUrl"></div>
+          <input type="text" class="link" id="shortLink" value="example">
+          <button class="copy" id="copy" onclick="copyLink()">
+            Copy
+          </button>
+        </div>
+
+        <div class="output " id="outputTwo">
+          <div class="text" id="oldUrlTwo"></div>
+          <input type="text" class="link" id="shortLinkTwo" value="example" />
+          <button class="copy" id="copy" onclick="copyLink()">
+            Copy
+          </button>
+        </div>
+
+        <div class="output " id="outputThree">
+          <div class="text" id="oldUrlThree"></div>
+          <input type="text" class="link" id="shortLinkThree" value="example" />
+          <button class="copy" id="copy" onclick="copyLink()">
+            Copy
+          </button>
+        </div>
+      </section>
+
+      <section class="stat">
+        <div class="stat-desc">
+          <h2>Advanced Statistics</h2>
+          <p>Track how your links are performing across the web with<br /> our 
+            advanced statistics dashboard.
+          </p>
+        </div>
+
+        <div class="cards-wrap">
+          <div class="card">
+            <div class="icon">
+              <img src="../images/icon-brand-recognition.svg" alt="icon-chart">
+            </div>
+            <h3>Brand Recognition</h3>
+            <p>Boost your brand recognition with each click. Generic links don’t 
+              mean a thing. Branded links help instil confidence in your content.
+            </p>
+          </div>
+
+          <div class="space">
+            <div class="line"></div>
+          </div>
+
+          <div class="card card2">
+            <div class="icon">
+              <img src="../images/icon-detailed-records.svg" alt="icon-flame">
+            </div>
+            <h3>Detailed  Records</h3>
+            <p>Gain insights into who is clicking your links. Knowing when and where 
+              people engage with your content helps inform better decisions.
+            .
+            </p>
+          </div>
+
+          <div class="space">
+            <div class="line"></div>
+          </div>
+
+          <div class="card card3">
+            <div class="icon">
+              <img src="../images/icon-fully-customizable.svg" alt="icon">
+            </div>
+            <h3>Fully  Customizable</h3>
+            <p>Improve brand awareness and content discoverability through customizable 
+              links, supercharging audience engagement.
+            </p>
+          </div>
+        </div>
+      </section>
+      </div>
+    </main>
+
+    <section class="action-button">
+      <div class="text">Boost your links today</div>
+      <button>Get Started</button>
+    </section>
+
+    <footer>
+      <div class="logo">
+        <a href="/pages/index.html">Shortly</a>
+      </div>
+      <div class="features">
+        <h5>Features</h5>
+        <nav>
+          <a href="#" class="footer-link">link Shortening</a>
+          <a href="#" class="footer-link">Branded Links</a>
+          <a href="#" class="footer-link">Analyze</a>
+        </nav>
+      </div>
+      <div class="features">
+        <h5>Resources</h5>
+        <nav>
+          <a href="#" class="footer-link">Blog</a>
+          <a href="#" class="footer-link">Developers</a>
+          <a href="#" class="footer-link">Support</a>
+        </nav>
+      </div>
+      <div class="features">
+        <h5>Company</h5>
+        <nav>
+          <a href="#" class="footer-link">About</a>
+          <a href="#" class="footer-link">Our Team</a>
+          <a href="#" class="footer-link">Careers</a>
+          <a href="#" class="footer-link">Contact</a>
+        </nav>
+      </div>
+      <div class="social-media">
+        <div class="fb item"><a href="#"><img src="../images//icon-facebook.svg" alt="facebook-icon"></a></div>
+        <div class="twitter item"><a href="#"><img src="../images//icon-twitter.svg" alt=""></a></div>
+        <div class="pinterest item"><a href="#"><img src="../images/icon-pinterest.svg" alt=""></a></div>
+        <div class="instagram item"><a href="#"><img src="../images/icon-instagram.svg" alt=""></a></div>
+      </div>
+    </footer>
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://sophia-abubakar.netlify.app">Sophia Ahuoyiza Abubakar</a>.
+  </div>
+</div>
+<script src="https://kit.fontawesome.com/568c011d87.js" crossorigin="anonymous"></script>
+<script src="../scripts/index.js"></script>
+</body>
+</html>
