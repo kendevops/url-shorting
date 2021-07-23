@@ -47,9 +47,9 @@ button:focus {
 }
 
 /* Desktop View */
-.page-wrap {
-  color: ;
-}
+/* .page-wrap {
+  color: var();
+} */
 /* header */
 .header-container {
   display: flex;
@@ -91,8 +91,8 @@ nav .nav-item {
 .user-auth .login {
   margin-right: 10px;
 }
-.user-auth .sign-up {
-}
+/* .user-auth .sign-up {
+} */
 .user-auth .sign-up,
 .user-auth .login {
   margin-right: 10px;
